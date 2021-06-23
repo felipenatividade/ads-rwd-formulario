@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <script>
+      function validaForm(frm) {
+          if(frm.nome.value == "" || frm.nome.value == null || frm.nome.value.lenght < 3) {
+              alert("Por favor, indique o seu nome.");
+              frm.nome.focus();
+              return false;
+          }
+
+          if(frm.email.value.indexOf("@") == -1 || frm.email.value == "" || frm.email.value == null) {
+              alert("Por favor, indique um e-mail válido.");
+              frm.email.focus();
+              return false;
+          }
+
+          if(frm.sexo.value == "" || frm.sexo.value == null) {
+              alert("qual o seu sexo?");
+              frm.sexo[0].focus();
+              return false;
+          }
+
+          if(frm.cargo.value == "" || frm.cargo.value == null) {
+              alert("Por favor, indique sua profissão/cargo?");
+              frm.cargo.focus();
+              return false;
+          }
+
+          alert("Obrigado por se cadastrar!");
+      }
+    </script>
+</head>
+<body>
+    <div style="text-align: center;">
+      <form name="frmTeste" method="post" action="#" onsubmit="return validaForm(this);">
+        <p>Atividade da semana 15/06/2021</p>
+        <p>Nome: <input type="text" name="nome" id="nome" /></p>
+        <p>Email: <input type="text" name="email" id="email" /></p>
+        <p>Sexo:
+          <label><input type="radio" name="sexo" value="M" id="masc" />Masculino</label>
+         <label><input type="radio" name="sexo" value="F" id="fem" />Feminino</label>
+        </p>
+        <p>Profissão
+          <select name="cargo">
+            <option value="">Selecione o cargo</option>
+            <option value="programador">Programador</option>
+            <option value="designer">Designer</option>
+            <option value="tester">Tester</option>
+         </select>
+        </p><label><input type="submit" name="sbt" value="Enviar" /></label></p>
+      </form>
+    </div>
+</body>
+</html>
